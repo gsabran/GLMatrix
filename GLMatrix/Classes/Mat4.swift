@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import GLKit
+
 /**
 Class to describe a 4x4 matrix
 **/
@@ -480,5 +482,11 @@ public class Mat4: CustomStringConvertible {
 			out[15] = self[15]
 		}
 		
+	}
+}
+
+extension GLKMatrix4 {
+	public init(_ mat: Mat4) {
+		self.init(m: mat.m)
 	}
 }

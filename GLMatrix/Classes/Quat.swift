@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import GLKit
+
 /**
 A quaternion
 **/
@@ -88,5 +90,11 @@ public class Quat: CustomStringConvertible {
 		out[1] = ay * bw + aw * by + az * bx - ax * bz
 		out[2] = az * bw + aw * bz + ax * by - ay * bx
 		out[3] = aw * bw - ax * bx - ay * by - az * bz
+	}
+}
+
+extension GLKQuaternion {
+	public init(_ quat: Quat) {
+		self.init(q: (quat.x, quat.y, quat.z, quat.w))
 	}
 }

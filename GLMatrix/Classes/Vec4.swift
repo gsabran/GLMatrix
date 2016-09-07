@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import GLKit
+
+/// a 4D vector
 public class Vec4: CustomStringConvertible {
 	var v: (GLfloat, GLfloat, GLfloat, GLfloat)
 
@@ -15,6 +18,7 @@ public class Vec4: CustomStringConvertible {
 			return String(format:"Vec4(\n%f, %f, %f, %f)", v.0, v.1, v.2, v.3)
 		}
 	}
+
 	public subscript(i: Int) -> GLfloat {
 		get {
 			switch i {
@@ -247,7 +251,7 @@ public class Vec4: CustomStringConvertible {
 	Calculates the length of a vec4
 	- Returns: length of a
 	*/
-	var length: GLfloat {
+	public var length: GLfloat {
 		var x = self[0],
 		y = self[1],
 		z = self[2],
@@ -259,7 +263,7 @@ public class Vec4: CustomStringConvertible {
 	Calculates the squared length of a vec4
 	- Returns: squared length of a
 	*/
-	var squaredLength: GLfloat {
+	public var squaredLength: GLfloat {
 		var x = self[0],
 		y = self[1],
 		z = self[2],
@@ -380,5 +384,11 @@ public class Vec4: CustomStringConvertible {
 		out[1] = iy * qw + iw * -qy + iz * -qx - ix * -qz
 		out[2] = iz * qw + iw * -qz + ix * -qy - iy * -qx
 		out[3] = self[3]
+	}
+}
+
+extension GLKVector4 {
+	public init(_ vec: Vec4) {
+		self.init(v: vec.v)
 	}
 }
