@@ -46,5 +46,13 @@ class TableOfContentsSpec: QuickSpec {
                 }
             }
         }
+
+		describe("Mat3") {
+			it("can create a mat3") {
+				let mat = Mat3.Zero()
+				mat.invert()
+				expect(mat.m00) == 0.0
+			}
+		}
     }
 }
