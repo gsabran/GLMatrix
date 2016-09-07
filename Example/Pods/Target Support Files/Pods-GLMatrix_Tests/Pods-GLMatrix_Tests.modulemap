@@ -1,0 +1,6 @@
+framework module Pods_GLMatrix_Tests {
+  umbrella header "Pods-GLMatrix_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

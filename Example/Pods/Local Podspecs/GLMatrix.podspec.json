@@ -1,0 +1,22 @@
+{
+  "name": "GLMatrix",
+  "version": "0.1.0",
+  "summary": "A short description of GLMatrix.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/GLMatrix",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Guillaume Sabran": "sabranguillaume@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/GLMatrix.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "GLMatrix/Classes/**/*"
+}
