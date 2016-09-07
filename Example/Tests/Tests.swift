@@ -52,6 +52,11 @@ class TableOfContentsSpec: QuickSpec {
 				let mat = Mat3.Zero()
 				mat.invert()
 				expect(mat.m00) == 0.0
+
+				// func divide(by b: Vec4, andOutputTo out: Vec4? = nil) {
+				let a = Vec4.Zero()
+				let b = Vec4.Zero()
+				a.divide(by: b)
 			}
 		}
     }

@@ -67,7 +67,6 @@ public class Quat: CustomStringConvertible {
 	- Parameter y: Y component
 	- Parameter z: Z component
 	- Parameter w: W component
-	- Returns a: new quaternion
 	*/
 	public static func fromValues(x: GLfloat, y: GLfloat, z: GLfloat, w: GLfloat) -> Quat {
 		return Quat(x: x, y: y, z: z, w: w)
