@@ -435,4 +435,50 @@ public class Mat4: CustomStringConvertible {
 		out[14] = 0
 		out[15] = 1
 	}
+
+	/**
+	* Tranposes a 4x4 matrix
+	*
+	- Parameter out: mat4 receiving operation result, self if nil
+	*/
+	public func transpose(andOutputTo out: Mat4? = nil) {
+		guard let out = out else { return transpose(andOutputTo: self) }
+		// If we are transposing ourselves we can skip a few steps but have to cache some values
+		if (out === self) {
+			var a01 = self[1], a02 = self[2], a03 = self[3],
+			a12 = self[6], a13 = self[7],
+			a23 = self[11]
+
+			out[1] = self[4]
+			out[2] = self[8]
+			out[3] = self[12]
+			out[4] = a01
+			out[6] = self[9]
+			out[7] = self[13]
+			out[8] = a02
+			out[9] = a12
+			out[11] = self[14]
+			out[12] = a03
+			out[13] = a13
+			out[14] = a23
+		} else {
+			out[0] = self[0]
+			out[1] = self[4]
+			out[2] = self[8]
+			out[3] = self[12]
+			out[4] = self[1]
+			out[5] = self[5]
+			out[6] = self[9]
+			out[7] = self[13]
+			out[8] = self[2]
+			out[9] = self[6]
+			out[10] = self[10]
+			out[11] = self[14]
+			out[12] = self[3]
+			out[13] = self[7]
+			out[14] = self[11]
+			out[15] = self[15]
+		}
+		
+	}
 }
