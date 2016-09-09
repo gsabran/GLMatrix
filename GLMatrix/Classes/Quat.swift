@@ -92,9 +92,3 @@ public class Quat: CustomStringConvertible {
 		out[3] = aw * bw - ax * bx - ay * by - az * bz
 	}
 }
-
-extension GLKQuaternion {
-	public init(_ quat: Quat) {
-		self.init(q: (quat.x, quat.y, quat.z, quat.w))
-	}
-}

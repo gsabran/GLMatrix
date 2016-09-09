@@ -47,6 +47,7 @@
 		677EB185F79108A99208B50AD631BC11 /* NMBStringify.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAA550114D6D272FA2D67143280A7A0 /* NMBStringify.m */; };
 		68BFD8C6F627F355EAE322A5B91F93B4 /* AssertionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC5CB109C25F69117FDEF008918EA3D /* AssertionDispatcher.swift */; };
 		6982B696B0B477A26B66DDD3147D009E /* GLMatrix-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2763BB361E98024DB524DC2F7006954D /* GLMatrix-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F03AC691D832568007170D3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F03AC681D832568007170D3 /* Extensions.swift */; };
 		6F20B4541DBB53AE945F0D7F22E5859E /* QuickConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 82232560D2043FAB9379F8D32BB88E99 /* QuickConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6FCFFDDE1D7FBC650003D0A1 /* Quat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCFFDDD1D7FBC650003D0A1 /* Quat.swift */; };
 		6FCFFDE01D7FBC950003D0A1 /* Mat4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCFFDDF1D7FBC950003D0A1 /* Mat4.swift */; };
@@ -181,6 +182,7 @@
 		6B5545C5B4C305E49999C1703F21227D /* ExampleHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleHooks.swift; path = Sources/Quick/Hooks/ExampleHooks.swift; sourceTree = "<group>"; };
 		6E17416F8FBB067A5E5797EAF205A118 /* AsyncMatcherWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncMatcherWrapper.swift; path = Sources/Nimble/Matchers/AsyncMatcherWrapper.swift; sourceTree = "<group>"; };
 		6E9EA9EF064C9F4183AF392D8C6E45E9 /* AssertionRecorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionRecorder.swift; path = Sources/Nimble/Adapters/AssertionRecorder.swift; sourceTree = "<group>"; };
+		6F03AC681D832568007170D3 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		6FCFFDDD1D7FBC650003D0A1 /* Quat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quat.swift; sourceTree = "<group>"; };
 		6FCFFDDF1D7FBC950003D0A1 /* Mat4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mat4.swift; sourceTree = "<group>"; };
 		6FCFFDE11D7FC89D0003D0A1 /* Vec4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vec4.swift; sourceTree = "<group>"; };
@@ -547,6 +549,7 @@
 				6FCFFDDF1D7FBC950003D0A1 /* Mat4.swift */,
 				6FCFFDDD1D7FBC650003D0A1 /* Quat.swift */,
 				6FCFFDE11D7FC89D0003D0A1 /* Vec4.swift */,
+				6F03AC681D832568007170D3 /* Extensions.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -679,7 +682,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -707,6 +710,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FCFFDE01D7FBC950003D0A1 /* Mat4.swift in Sources */,
+				6F03AC691D832568007170D3 /* Extensions.swift in Sources */,
 				6FCFFDDE1D7FBC650003D0A1 /* Quat.swift in Sources */,
 				6FCFFDE21D7FC89D0003D0A1 /* Vec4.swift in Sources */,
 				2682F056F84F1B470B38B2C765E7045E /* GLMatrix-dummy.m in Sources */,
@@ -1098,14 +1102,18 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
@@ -1119,6 +1127,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1138,15 +1147,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",

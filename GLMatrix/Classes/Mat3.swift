@@ -8,7 +8,6 @@
 
 import GLKit
 import Foundation
-import SceneKit
 
 /**
 Class to describe a 3x3 matrix
@@ -322,11 +321,5 @@ public class Mat3: CustomStringConvertible {
 			zy - wx,
 			1 - xx - yy
 		)
-	}
-}
-
-extension GLKMatrix3 {
-	public init(_ mat: Mat3) {
-		self.init(m: mat.m)
 	}
 }
