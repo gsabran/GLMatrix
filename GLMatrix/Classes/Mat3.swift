@@ -8,6 +8,7 @@
 
 import GLKit
 import Foundation
+import SceneKit
 
 /**
 Class to describe a 3x3 matrix
@@ -289,12 +290,11 @@ public class Mat3: CustomStringConvertible {
 	/**
 	* Calculates a 3x3 matrix from the given quaternion
 	*
-	- Parameter out: mat3 receiving operation result
 	- Parameter q: Quaternion to create matrix from
 	*
 	- Returns out:
 	*/
-	public static func fromQuat(out: Mat3, q: Quat) -> Void {
+	public init(_ q: Quat) {
 		let x = q[0], y = q[1], z = q[2], w = q[3],
 		x2 = x + x,
 		y2 = y + y,
@@ -310,17 +310,18 @@ public class Mat3: CustomStringConvertible {
 		wy = w * y2,
 		wz = w * z2
 
-		out[0] = 1 - yy - zz
-		out[1] = yx + wz
-		out[2] = zx - wy
+		self.m = (1 - yy - zz,
+			yx + wz,
+			zx - wy,
 
-		out[3] = yx - wz
-		out[4] = 1 - xx - zz
-		out[5] = zy + wx
+			yx - wz,
+			1 - xx - zz,
+			zy + wx,
 
-		out[6] = zx + wy
-		out[7] = zy - wx
-		out[8] = 1 - xx - yy
+			zx + wy,
+			zy - wx,
+			1 - xx - yy
+		)
 	}
 }
 

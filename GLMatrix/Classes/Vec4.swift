@@ -8,6 +8,7 @@
 
 import Foundation
 import GLKit
+import SceneKit
 
 /// a 4D vector
 public class Vec4: CustomStringConvertible {
@@ -390,5 +391,25 @@ public class Vec4: CustomStringConvertible {
 extension GLKVector4 {
 	public init(_ vec: Vec4) {
 		self.init(v: vec.v)
+	}
+}
+
+extension SCNVector4 {
+	public init(_ vec: Vec4) {
+		self.init(x: vec.v0, y: vec.v1, z: vec.v2, w: vec.v3)
+	}
+	
+	public init(_ vec: GLKVector4) {
+		self.init(x: vec.v.0, y: vec.v.1, z: vec.v.2, w: vec.v.3)
+	}
+}
+
+extension NSValue {
+	public convenience init(vec4: Vec4) {
+		self.init(scnVector4: SCNVector4(vec4))
+	}
+
+	public convenience init(vec4: GLKVector4) {
+		self.init(scnVector4: SCNVector4(vec4))
 	}
 }
