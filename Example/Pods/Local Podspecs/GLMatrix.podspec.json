@@ -1,7 +1,7 @@
 {
   "name": "GLMatrix",
-  "version": "0.1.0",
-  "summary": "A short description of GLMatrix.",
+  "version": "0.1.2",
+  "summary": "A librairy to do Matrix, vector and quaternions maths",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/<GITHUB_USERNAME>/GLMatrix",
   "license": {
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/<GITHUB_USERNAME>/GLMatrix.git",
-    "tag": "0.1.0"
+    "tag": "0.1.2"
   },
   "platforms": {
     "ios": "8.0"

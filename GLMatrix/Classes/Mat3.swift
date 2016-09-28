@@ -14,7 +14,7 @@ Class to describe a 3x3 matrix
 **/
 public class Mat3: CustomStringConvertible {
 	/// Holds references to the 9 values of the 3x3 matrix
-	var m: (GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat)
+	public internal(set) var m: (GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat)
 
 	///Holds references to the 9 values of the 3x3 matrix
 	public init(m: (GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat)) {

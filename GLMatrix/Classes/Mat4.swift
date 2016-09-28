@@ -14,7 +14,7 @@ Class to describe a 4x4 matrix
 **/
 public class Mat4: CustomStringConvertible {
 	/// Holds references to the 16 values of the 4x4 matrix
-	var m: (GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat)
+	public internal(set) var m: (GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat)
 
 	///Holds references to the 16 values of the 4x4 matrix
 	public init(m: (GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat)) {
@@ -481,6 +481,49 @@ public class Mat4: CustomStringConvertible {
 			out[14] = self[11]
 			out[15] = self[15]
 		}
-		
+	}
+
+	public func translate(by vec: Vec3, andOutputTo out: Mat4? = nil) {
+		guard let out = out else { return translate(by: vec, andOutputTo: self) }
+		out[0] = self[0]
+		out[1] = self[1]
+		out[2] = self[2]
+		out[3] = self[3]
+		out[4] = self[4]
+		out[5] = self[5]
+		out[6] = self[6]
+		out[7] = self[7]
+		out[8] = self[8]
+		out[9] = self[9]
+		out[10] = self[10]
+		out[11] = self[11]
+		out[12] = self[12] + vec.v0
+		out[13] = self[13] + vec.v1
+		out[14] = self[14] + vec.v2
+		out[15] = self[15]
+	}
+
+	public func scale(by vec: Vec4, andOutputTo out: Mat4? = nil) {
+		guard let out = out else { return scale(by: vec, andOutputTo: self) }
+		out[0] = self[0] * vec.v0
+		out[1] = self[1] * vec.v0
+		out[2] = self[2] * vec.v0
+		out[3] = self[3]
+		out[4] = self[4] * vec.v1
+		out[5] = self[5] * vec.v1
+		out[6] = self[6] * vec.v1
+		out[7] = self[7]
+		out[8] = self[8] * vec.v2
+		out[9] = self[9] * vec.v2
+		out[10] = self[10] * vec.v2
+		out[11] = self[11]
+		out[12] = self[12] * vec.v3
+		out[13] = self[13] * vec.v3
+		out[14] = self[14] * vec.v3
+		out[15] = self[15]
+	}
+
+	public func scale(by x: GLfloat, andOutputTo out: Mat4? = nil) {
+		self.scale(by: Vec4(v: (x, x, x, x)), andOutputTo: out)
 	}
 }

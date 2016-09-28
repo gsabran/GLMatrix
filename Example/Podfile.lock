@@ -1,36 +1,22 @@
 PODS:
-  - GLMatrix (0.1.0)
-  - Nimble (5.0.0-alpha.30p1)
-  - Quick (0.9.3)
+  - GLMatrix (0.1.2)
+  - Nimble (5.0.0)
+  - Quick (0.10.0)
 
 DEPENDENCIES:
   - GLMatrix (from `../`)
-  - Nimble (from `https://github.com/Quick/Nimble.git`, branch `swift-3.0`)
-  - Quick (from `https://github.com/Quick/Quick.git`, branch `swift-3.0`)
+  - Nimble (~> 5.0.0)
+  - Quick (= 0.10.0)
 
 EXTERNAL SOURCES:
   GLMatrix:
     :path: "../"
-  Nimble:
-    :branch: swift-3.0
-    :git: https://github.com/Quick/Nimble.git
-  Quick:
-    :branch: swift-3.0
-    :git: https://github.com/Quick/Quick.git
-
-CHECKOUT OPTIONS:
-  Nimble:
-    :commit: 4b539a275d2714212ce598177d586680fc088927
-    :git: https://github.com/Quick/Nimble.git
-  Quick:
-    :commit: 0c8e51e750b48b759087a729f3fe6423934b3158
-    :git: https://github.com/Quick/Quick.git
 
 SPEC CHECKSUMS:
-  GLMatrix: eb98417cef60c2c94d2f1d3772132f29109cdc76
-  Nimble: c5b995b4cd57789ec44b0cfb79640fc00e61a8c7
-  Quick: 31fb576b6cbb6b028cc5e0016e4366accbb346f5
+  GLMatrix: a7f69b0278799b0c11675596fa49adfd4c3e34fc
+  Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
+  Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
 
-PODFILE CHECKSUM: 9f4f236d402c73e784cfd6b4f0c4201c5aa2aeb8
+PODFILE CHECKSUM: ce6b65b070bf89e9c62acdd600f587b4fdbe9ce3
 
-COCOAPODS: 1.1.0.beta.1
+COCOAPODS: 1.1.0.rc.1
