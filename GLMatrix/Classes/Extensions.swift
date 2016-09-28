@@ -130,3 +130,10 @@ extension GLKQuaternion {
 		self.init(q: (quat.x, quat.y, quat.z, quat.w))
 	}
 }
+
+// GLKit
+public func glUniformMatrix4fv(_ location: GLint, _ count: GLsizei, _ transpose: GLboolean, _ value: Mat4) {
+	let m = value.m
+	let array: Array<GLfloat> = [m.0, m.1, m.2, m.3, m.4, m.5, m.6, m.7, m.8, m.9, m.10, m.11, m.12, m.13, m.14, m.15]
+	return glUniformMatrix4fv(location, count, transpose, array)
+}
