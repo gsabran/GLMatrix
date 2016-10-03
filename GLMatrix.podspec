@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GLMatrix'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = 'A librairy to do Matrix, vector and quaternions maths'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  A few functions to handle matrices and quaternions computations. They are strongly inspired by the javascript librairy https://github.com/toji/gl-matrix
                        DESC
 
   s.homepage         = 'https://github.com/gsabran/GLMatrix'
