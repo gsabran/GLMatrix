@@ -205,7 +205,7 @@ public class Vec3: CustomStringConvertible {
 	- Returns: distance with b
 	*/
 	public func distance(from b: Vec3) -> GLfloat {
-		var x = b[0] - self[0],
+		let x = b[0] - self[0],
 		y = b[1] - self[1],
 		z = b[2] - self[2]
 		return sqrt(x*x + y*y + z*z)
@@ -217,7 +217,7 @@ public class Vec3: CustomStringConvertible {
 	- Returns: squared distance between a and b
 	*/
 	public func squaredDistance(from b: Vec3) -> GLfloat {
-		var x = b[0] - self[0],
+		let x = b[0] - self[0],
 		y = b[1] - self[1],
 		z = b[2] - self[2]
 		return x*x + y*y + z*z
@@ -228,7 +228,7 @@ public class Vec3: CustomStringConvertible {
 	- Returns: length of a
 	*/
 	public var length: GLfloat {
-		var x = self[0],
+		let x = self[0],
 		y = self[1],
 		z = self[2]
 		return sqrt(x*x + y*y + z*z)
@@ -239,7 +239,7 @@ public class Vec3: CustomStringConvertible {
 	- Returns: squared length of a
 	*/
 	public var squaredLength: GLfloat {
-		var x = self[0],
+		let x = self[0],
 		y = self[1],
 		z = self[2]
 		return x*x + y*y + z*z
@@ -276,7 +276,7 @@ public class Vec3: CustomStringConvertible {
 	public func normalize(andOutputTo out: Vec3? = nil) {
 		guard let out = out else { return normalize(andOutputTo: self) }
 
-		var x = self[0],
+		let x = self[0],
 		y = self[1],
 		z = self[2]
 		var len = x*x + y*y + z*z
@@ -306,7 +306,7 @@ public class Vec3: CustomStringConvertible {
 	public func lerp(with b: Vec3, at t: GLfloat, andOutputTo out: Vec3? = nil) {
 		guard let out = out else { return lerp(with: b, at: t, andOutputTo: self) }
 
-		var ax = self[0],
+		let ax = self[0],
 		ay = self[1],
 		az = self[2]
 		out[0] = ax + t * (b[0] - ax)
@@ -323,7 +323,7 @@ public class Vec3: CustomStringConvertible {
 	public func transform(with mat: Mat3, andOutputTo out: Vec3? = nil) {
 		guard let out = out else { return transform(with: mat, andOutputTo: self) }
 
-		var x = self[0], y = self[1], z = self[2]
+		let x = self[0], y = self[1], z = self[2]
 		out[0] = mat[0] * x + mat[3] * y + mat[6] * z
 		out[1] = mat[1] * x + mat[4] * y + mat[7] * z
 		out[2] = mat[2] * x + mat[5] * y + mat[8] * z
@@ -337,7 +337,7 @@ public class Vec3: CustomStringConvertible {
 	public func transform(with quat: Quat, andOutputTo out: Vec3? = nil) {
 		guard let out = out else { return transform(with: quat, andOutputTo: self) }
 
-		var x = self[0], y = self[1], z = self[2],
+		let x = self[0], y = self[1], z = self[2],
 		qx = quat[0], qy = quat[1], qz = quat[2], qw = quat[3],
 
 		// calculate quat vec

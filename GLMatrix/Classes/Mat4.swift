@@ -447,7 +447,7 @@ public class Mat4: CustomStringConvertible {
 		guard let out = out else { return transpose(andOutputTo: self) }
 		// If we are transposing ourselves we can skip a few steps but have to cache some values
 		if (out === self) {
-			var a01 = self[1], a02 = self[2], a03 = self[3],
+			let a01 = self[1], a02 = self[2], a03 = self[3],
 			a12 = self[6], a13 = self[7],
 			a23 = self[11]
 
